@@ -49,7 +49,6 @@ function cellClicked(e) {
     //* Checks each row vertically for wins
     for(let x = 0; x <= 2; x++){
         if (cell[x].textContent == 'O' || cell[x].textContent == 'X') {
-            //check horizontal
             if (cell[x + 3].textContent == cell[x].textContent && cell[x + 6].textContent == cell[x].textContent) {
                 alert(cell[x].textContent + "'s Won Vertically!");
                 isDone = true;
@@ -67,10 +66,8 @@ function cellClicked(e) {
     // * Checks the Diagonals for a win.
     
     x = 0;
-    console.log(x);
     //Diagonal 1
     if (x == 0 && cell[x].textContent == 'O' || cell[x].textContent == 'X') {
-        console.log("I am THere!");
         if (cell[x + 4].textContent == cell[x].textContent && cell[x + 8].textContent == cell[x].textContent) {
             alert(cell[x].textContent + "'s Won Diagonally!");
             isDone = true;
@@ -86,9 +83,8 @@ function cellClicked(e) {
     }
     
     x = 2;
-    console.log(x);
+    //Diagonal 2
     if (x == 2 && cell[x].textContent == 'O' || cell[x].textContent == 'X') {
-        console.log("I am Here!");
         if (cell[x + 2].textContent == cell[x].textContent && cell[x + 4].textContent == cell[x].textContent) {
             alert(cell[x].textContent + "'s Won Diagonally!");
             isDone = true;
@@ -102,7 +98,7 @@ function cellClicked(e) {
             }
         }
     }
-    //Checks for a tied Game.
+    //* Checks for a tied Game.
     if (moveCount == 9 && isDone == false) {
         alert("Game Ended with a Tie!");
         isDone = true;
@@ -112,7 +108,7 @@ function cellClicked(e) {
         scoreBoard[1].textContent = player2Score;
 
     }
-
+    //* Clears the Game board and sets values for the next game.
     if (isDone == true){
         for(let z = 0; z < cell.length; z++){
             cell[z].textContent = '';
