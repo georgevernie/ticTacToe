@@ -1,0 +1,62 @@
+.playerName{
+    text-align: center;
+    font-size: 3rem;
+    display:inline;
+}
+#black{
+    color:whitesmoke;
+    background: rgb(78, 77, 77);
+}
+#green{
+    color:black;
+    background: rgb(78, 235, 77);
+}
+.spacer{
+    width:30vw;
+    display:inline-block;
+}
+#board{
+    padding:3em;
+    text-align: center;
+}
+body{
+    background: rgb(241, 229, 212);
+}
+.row > div{
+    float:left;
+    height: 100px;
+    width: 100px;
+}
+.row{
+    clear:both;
+    margin:0 auto; 
+    width: 304px;
+}
+h1{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 4em;
+}
+.row {
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 6em;
+}
+.top{border-bottom: 2px black solid;}
+.bottom{border-top: 2px black solid;}
+.left{border-right: 2px black solid;}
+.right{border-left: 2px black solid;}
+
+ .row:hover{
+    cursor:pointer;
+}
+.top:hover{
+    background: lightskyblue;
+}
+.middle:hover{
+    background: lightskyblue;
+}
+.bottom:hover{
+    background: lightskyblue;
+}
+
