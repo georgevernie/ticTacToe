@@ -67,8 +67,10 @@ function cellClicked(e) {
     // * Checks the Diagonals for a win.
     
     x = 0;
+    console.log(x);
     //Diagonal 1
-    if (x != 2 && cell[x].textContent == 'O' || cell[x].textContent == 'X') {
+    if (x == 0 && cell[x].textContent == 'O' || cell[x].textContent == 'X') {
+        console.log("I am THere!");
         if (cell[x + 4].textContent == cell[x].textContent && cell[x + 8].textContent == cell[x].textContent) {
             alert(cell[x].textContent + "'s Won Diagonally!");
             isDone = true;
@@ -82,8 +84,11 @@ function cellClicked(e) {
             }
         }
     }
+    
     x = 2;
-    if (x == 0 && cell[x].textContent == 'O' || cell[x].textContent == 'X') {
+    console.log(x);
+    if (x == 2 && cell[x].textContent == 'O' || cell[x].textContent == 'X') {
+        console.log("I am Here!");
         if (cell[x + 2].textContent == cell[x].textContent && cell[x + 4].textContent == cell[x].textContent) {
             alert(cell[x].textContent + "'s Won Diagonally!");
             isDone = true;
@@ -114,6 +119,7 @@ function cellClicked(e) {
         }
         isDone = false;
         moveCount = 0;
+        player = 0;
     }
     
     
