@@ -13,7 +13,12 @@ cell.forEach(function (cell) {
 });
 
 function cellClicked(e) {
-    // * Basic Movement And Turn Logic
+    //* Lets the players know that there is something in a clicked cell already.
+     if (e.target.textContent !== '' && isDone !== true) {
+        alert("Invalid Move!");
+    }
+
+    // * Basic Turn Logic
     if (player === 0 && e.target.textContent !== 'X' && e.target.textContent !== 'O') {
         e.target.textContent = 'X';
         player++;
@@ -24,9 +29,15 @@ function cellClicked(e) {
         player--;
         moveCount++;
     }
-    //* Lets the players know that there is something in that cell already.
-    else if (e.target.textContent === 'X' || e.target.textContent === 'O') {
-        alert("Invalid Move!");
+
+    //* Clears board and resets everything besides the score board if the game is done.
+    if (isDone === true){ 
+        isDone = false;
+        moveCount = 0;
+        player = 0;
+        for (let z = 0; z < cell.length; z++) {
+            cell[z].textContent = '';
+        }
     }
 
     // * Checks each horizontal section to see if there was a win.
@@ -66,7 +77,7 @@ function cellClicked(e) {
 
     //* Checks the Diagonals for a win.
     x = 0;
-    //Diagonal 1
+    //! Diagonal 1
     if (x === 0 && cell[x].textContent === 'O' || cell[x].textContent === 'X') {
         if (cell[x + 4].textContent === cell[x].textContent && cell[x + 8].textContent === cell[x].textContent) {
             alert(cell[x].textContent + "'s Won Diagonally!");
@@ -83,7 +94,7 @@ function cellClicked(e) {
     }
     
     x = 2;
-    //Diagonal 2
+    // !Diagonal 2
     if (x === 2 && cell[x].textContent === 'O' || cell[x].textContent === 'X') {
         if (cell[x + 2].textContent === cell[x].textContent && cell[x + 4].textContent === cell[x].textContent) {
             alert(cell[x].textContent + "'s Won Diagonally!");
@@ -106,15 +117,6 @@ function cellClicked(e) {
         scoreBoard[0].textContent = player1Score;
         player2Score++;
         scoreBoard[1].textContent = player2Score;
-
     }
-    //* Clears the Game board and sets values for the next game.
-    if (isDone === true){
-        for(let z = 0; z < cell.length; z++){
-            cell[z].textContent = '';
-        }
-        isDone = false;
-        moveCount = 0;
-        player = 0;
-    }
+    
 }
