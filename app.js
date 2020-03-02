@@ -94,7 +94,7 @@ function cellClicked(e) {
     }
     
     x = 2;
-    // !Diagonal 2
+    //! Diagonal 2
     if (x === 2 && cell[x].textContent === 'O' || cell[x].textContent === 'X') {
         if (cell[x + 2].textContent === cell[x].textContent && cell[x + 4].textContent === cell[x].textContent) {
             alert(cell[x].textContent + "'s Won Diagonally!");
