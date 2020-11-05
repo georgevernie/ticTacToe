@@ -1,5 +1,7 @@
-.playerName{
+.score-board{
     text-align: center;
+}
+.player-name{
     font-size: 3rem;
     display:inline;
 }

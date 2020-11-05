@@ -3,6 +3,9 @@
 
 In this lab, you will finish your Tic Tac Toe game! Let's add interactivity and make it work :)
 
+## Final Screen Shot:
+![picture](img/TicTacToe.png)
+
 Note: You should have already have the game board for Tic Tac Toe from the previous lab.
 Requirements
 
